@@ -73,6 +73,7 @@ std::string PULL(std::string req)
 				buffer << file.rdbuf();
 				contents = buffer.str();
 				file.close();
+				std::cout << fullpath << ": Served.\n";
 				return contents;
 			}
 			else
@@ -131,7 +132,7 @@ std::string PULL(std::string req)
 				int i_beg,i_end;
 				
 				if (beg=="^") i_beg = 0; else i_beg = StringToNumber(beg,0);
-				if ((end=="$")||(end=="0")) i_end=size; else i_end = StringToNumber(end,0);
+				if (end=="$") i_end=size; else i_end = StringToNumber(end,0);
 				if (i_beg>i_end) i_end=i_beg;
 				
 				char ch; int i = 0;
@@ -156,12 +157,6 @@ std::string PULL(std::string req)
 		return "Error: No such file or file unreadable.";
 	}
 }
-
-
-
-
-
-
 
 
 int main ( int argc, char* argv[] )
