@@ -1,7 +1,9 @@
-localhost:/1.xd:bullshit1
-localhost:/1.xd:bullshit2
+!localhost/1.xd#bullshit1
+!localhost/2.xd#bullshit2
 
-bullshit3
+#bullshit3
 {{
-3333333333333333333333333333
+333
+333
+333
 }}
